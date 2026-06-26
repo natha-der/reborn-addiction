@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reborn — Renaître, un pas à la fois</title>
+  <meta name="description" content="Reborn : prévention des addictions, méthodes, professionnels, témoignages. Vous pouvez renaître." />
+  <link rel="stylesheet" href="resssource/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVIGATION
+  ======================================================= -->
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo">
+        <div class="logo-orb" aria-hidden="true"></div>
+        Reborn
+      </a>
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <a href="#comprendre">Comprendre</a>
+        <a href="#methodes">S'en sortir</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#pros">Professionnels</a>
+        <a href="#urgences">Urgences</a>
+        <a href="#contact" class="nav-pill">Parler maintenant</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#comprendre">Comprendre</a>
+      <a href="#methodes">S'en sortir</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#pros">Professionnels</a>
+      <a href="#urgences">Urgences</a>
+      <a href="#contact" class="mobile-pill">Parler maintenant</a>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       HERO — Ciel étoilé canvas + aube au scroll
+  ======================================================= -->
+  <section class="hero" id="hero">
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="hero-dawn" id="hero-dawn" aria-hidden="true"></div>
+
+    <div class="hero-body">
+      <div class="container hero-container">
+
+        <div class="hero-text">
+          <p class="hero-label">
+            <span class="pulse-dot"></span>
+            Ligne d'écoute ouverte — <a href="tel:3114" class="label-link">3114</a>
+          </p>
+
+          <h1 class="hero-h1">
+            <span class="line-mask"><em class="hero-em hero-anim" style="--i:0">Il fait nuit.</em></span>
+            <span class="line-mask"><strong class="hero-strong hero-anim" style="--i:1">L'aube existe.</strong></span>
+          </h1>
+
+          <p class="hero-desc hero-anim" style="--i:2">
+            L'addiction n'est pas une faiblesse. C'est une blessure que le cerveau a appris à soigner de la mauvaise façon. Des millions de personnes s'en sont sorties — avec les bons outils et les bonnes personnes.
+          </p>
+
+          <div class="hero-ctas hero-anim" style="--i:3">
+            <a href="#contact" class="cta-primary">Parler à quelqu'un</a>
+            <a href="#comprendre" class="cta-ghost">Comprendre l'addiction</a>
+          </div>
+
+          <div class="hero-trust hero-anim" style="--i:4">
+            <span class="trust-item">✓ Anonyme</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">✓ Gratuit</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">✓ Sans jugement</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="path-card">
+            <div class="path-sky">
+              <div class="path-stars">
+                <span class="ps" style="--x:15%;--y:20%;--s:3px"></span>
+                <span class="ps" style="--x:40%;--y:10%;--s:2px"></span>
+                <span class="ps" style="--x:70%;--y:25%;--s:4px"></span>
+                <span class="ps" style="--x:85%;--y:15%;--s:2px"></span>
+                <span class="ps" style="--x:25%;--y:40%;--s:2px"></span>
+                <span class="ps" style="--x:55%;--y:35%;--s:3px"></span>
+              </div>
+              <div class="path-horizon"></div>
+              <div class="path-sun"></div>
+            </div>
+            <div class="path-ground">
+              <svg class="path-svg" viewBox="0 0 300 80" preserveAspectRatio="none">
+                <path class="path-line" d="M0,70 Q50,65 80,55 Q120,40 150,30 Q200,15 260,10 Q280,8 300,6" fill="none" stroke="url(#pathGrad)" stroke-width="3" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#1E2D5A"/>
+                    <stop offset="100%" stop-color="#38C4A0"/>
+                  </linearGradient>
+                </defs>
+                <circle class="path-dot" cx="300" cy="6" r="5" fill="#38C4A0"/>
+              </svg>
+            </div>
+            <p class="path-caption">Votre chemin, tracé à votre rythme</p>
+          </div>
+
+          <div class="hero-stats-grid">
+            <div class="hstat">
+              <span class="hstat-n">80%</span>
+              <span class="hstat-l">s'en sortent<br>avec de l'aide</span>
+            </div>
+            <div class="hstat">
+              <span class="hstat-n">2M</span>
+              <span class="hstat-l">personnes<br>touchées en France</span>
+            </div>
+            <div class="hstat">
+              <span class="hstat-n">24h</span>
+              <span class="hstat-l">écoute disponible<br>au 3114</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       BANDE URGENCE
+  ======================================================= -->
+  <div class="crisis-band" role="alert">
+    <div class="container crisis-inner">
+      <span class="crisis-dot"></span>
+      <span>En situation de crise ?</span>
+      <a href="tel:3114" class="crisis-num">3114</a>
+      <span class="crisis-sep">—</span>
+      <span>Disponible 24h/24, gratuit, confidentiel</span>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       COMPRENDRE
+  ======================================================= -->
+  <section class="sec" id="comprendre">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow">Démystifier</p>
+        <h2>Comprendre l'addiction</h2>
+        <p class="sec-intro">Pas un manque de volonté. Un trouble neurologique documenté. La comprendre change tout.</p>
+      </header>
+
+      <div class="understand-grid">
+        <div class="u-card fade-up">
+          <div class="u-icon" style="color:#38C4A0">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3.5-2.5 6.5-6 7.4V20h-2v-3.6C7.5 15.5 5 12.5 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg>
+          </div>
+          <h3>Ce qui se passe dans le cerveau</h3>
+          <p>Les substances et comportements addictifs inondent le circuit de la récompense en dopamine. Le cerveau s'adapte et réclame toujours plus pour ressentir la même chose. Ce n'est pas un choix moral — c'est de la neurochimie.</p>
+        </div>
+
+        <div class="u-card fade-up" style="--fd:0.1s">
+          <div class="u-icon" style="color:#D4A847">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Les facteurs de risque</h3>
+          <p>Génétique, traumatismes d'enfance, stress chronique, isolement social, santé mentale préexistante. L'addiction naît rarement d'une seule cause. C'est souvent une tentative de soigner une douleur profonde.</p>
+        </div>
+
+        <div class="u-card fade-up" style="--fd:0.2s">
+          <div class="u-icon" style="color:#A07BE0">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3>Le cycle de la dépendance</h3>
+          <p>Envie → soulagement → culpabilité → envie encore plus forte. Ce cycle peut être brisé. Des millions de personnes l'ont fait avant vous — souvent après plusieurs tentatives, et c'est normal.</p>
+        </div>
+
+        <div class="u-card fade-up" style="--fd:0.3s">
+          <div class="u-icon" style="color:#E07B8A">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Les proches sont touchés aussi</h3>
+          <p>Épuisement, culpabilité, incompréhension — l'entourage souffre autant. Des structures comme Al-Anon ou les CSAPA accueillent aussi les familles et partenaires, séparément si besoin.</p>
+        </div>
+      </div>
+
+      <!-- Auto-évaluation -->
+      <div class="quiz-wrap fade-up">
+        <div class="quiz-left">
+          <h3>Êtes-vous concerné·e ?</h3>
+          <p>Ces 5 questions peuvent vous aider à identifier un besoin d'accompagnement. Elles n'ont aucune valeur diagnostique.</p>
+          <div class="quiz-meter">
+            <div class="quiz-bar-bg">
+              <div class="quiz-bar-fill" id="quiz-fill"></div>
+            </div>
+            <span id="quiz-label">0 / 5</span>
+          </div>
+          <p class="quiz-msg" id="quiz-msg"></p>
+          <a href="#pros" class="quiz-link" id="quiz-link" style="display:none">Voir les ressources →</a>
+        </div>
+        <div class="quiz-right">
+          <label class="q-item"><input type="checkbox" class="qcb"/> <span>Je pense souvent à consommer, même quand je ne le souhaite pas</span></label>
+          <label class="q-item"><input type="checkbox" class="qcb"/> <span>J'ai essayé d'arrêter ou de réduire, sans succès durable</span></label>
+          <label class="q-item"><input type="checkbox" class="qcb"/> <span>Ma consommation affecte mon travail, mes relations ou ma santé</span></label>
+          <label class="q-item"><input type="checkbox" class="qcb"/> <span>Je ressens anxiété ou irritabilité quand je ne consomme pas</span></label>
+          <label class="q-item"><input type="checkbox" class="qcb"/> <span>Je continue malgré des conséquences négatives que je reconnais</span></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       MÉTHODES
+  ======================================================= -->
+  <section class="sec sec-dark" id="methodes">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow eyebrow-light">Outils concrets</p>
+        <h2 class="h2-light">Des méthodes qui fonctionnent</h2>
+        <p class="sec-intro intro-light">Il n'y a pas un seul chemin. Ces approches ont aidé des millions de personnes.</p>
+      </header>
+
+      <div class="methods-nav">
+        <button class="m-tab active" data-panel="p-psy">Psychothérapies</button>
+        <button class="m-tab" data-panel="p-quotidien">Au quotidien</button>
+        <button class="m-tab" data-panel="p-medical">Médical</button>
+        <button class="m-tab" data-panel="p-communaute">Communauté</button>
+      </div>
+
+      <div class="methods-panels">
+        <div class="m-panel active" id="p-psy">
+          <div class="m-grid">
+            <div class="m-card fade-up">
+              <span class="m-tag">Evidence-based</span>
+              <h3>Thérapie cognitivo-comportementale</h3>
+              <p>Identifier les pensées et situations qui déclenchent l'envie. Apprendre à y répondre autrement. Parmi les approches les mieux documentées en addictologie, remboursée partiellement.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.1s">
+              <span class="m-tag">Trauma</span>
+              <h3>EMDR</h3>
+              <p>Quand l'addiction couvre une blessure passée. L'EMDR retraite le traumatisme à la racine — recommandée par l'OMS. Particulièrement efficace pour les addictions liées à un vécu difficile.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.2s">
+              <span class="m-tag">3e vague</span>
+              <h3>Thérapie d'acceptation (ACT)</h3>
+              <p>Accepter les envies sans les combattre, s'engager vers ce qui compte vraiment. Très efficace quand l'addiction sert à éviter des émotions difficiles.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-panel" id="p-quotidien">
+          <div class="m-grid">
+            <div class="m-card fade-up">
+              <span class="m-tag">Pleine conscience</span>
+              <h3>MBRP — Mindfulness</h3>
+              <p>Observer l'envie sans y céder. Le programme MBRP est conçu spécifiquement pour prévenir la rechute. Des applis comme Petit Bambou proposent des exercices guidés.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.1s">
+              <span class="m-tag">Autonome</span>
+              <h3>Journal des envies</h3>
+              <p>Quand une envie surgit : noter l'heure, le contexte, l'émotion, l'intensité sur 10. En quelques semaines, les déclencheurs deviennent visibles et donc modifiables.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.2s">
+              <span class="m-tag">Long terme</span>
+              <h3>Reconstruire un projet de vie</h3>
+              <p>Remplir le vide est aussi important qu'arrêter. Sport, créativité, liens sociaux, travail — retrouver un sens est au cœur de la rémission durable.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-panel" id="p-medical">
+          <div class="m-grid">
+            <div class="m-card fade-up">
+              <span class="m-tag">Sur prescription</span>
+              <h3>Traitements de substitution</h3>
+              <p>Méthadone, buprénorphine, patch nicotine… Pour certaines addictions, ces traitements réduisent les symptômes de sevrage et permettent une transition en sécurité. Remboursés SS.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.1s">
+              <span class="m-tag">Progressif</span>
+              <h3>Réduction des risques (RDR)</h3>
+              <p>Réduire plutôt qu'arrêter brutalement. Cette approche bienveillante réduit les risques médicaux et psychologiques, sans jugement sur la vitesse de votre progression.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.2s">
+              <span class="m-tag">Cas sévères</span>
+              <h3>Hospitalisation thérapeutique</h3>
+              <p>Pour les sevrages complexes ou après une rechute sévère, une unité addictologie permet un sevrage médicalisé en toute sécurité. Pris en charge par l'assurance maladie.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-panel" id="p-communaute">
+          <div class="m-grid">
+            <div class="m-card fade-up">
+              <span class="m-tag">Pairs</span>
+              <h3>AA / NA / Joueurs Anonymes</h3>
+              <p>Partager avec des personnes qui comprennent vraiment, parce qu'elles sont passées par là. La communauté de pairs est l'un des facteurs de rémission les mieux documentés.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.1s">
+              <span class="m-tag">Vécu partagé</span>
+              <h3>Le pair-aidant</h3>
+              <p>Une personne en rémission qui accompagne ceux qui débutent. Le partage d'expérience vécue crée une confiance que les professionnels seuls ne peuvent pas toujours établir.</p>
+            </div>
+            <div class="m-card fade-up" style="--fd:0.2s">
+              <span class="m-tag">Anonyme</span>
+              <h3>Forums et groupes en ligne</h3>
+              <p>Pour ceux qui ne peuvent pas se déplacer ou qui préfèrent l'anonymat. Des communautés actives, disponibles à toute heure, pour ne jamais traverser une nuit seul·e.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       TÉMOIGNAGES
+  ======================================================= -->
+  <section class="sec" id="temoignages">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow">Ils témoignent</p>
+        <h2>Des parcours vrais.<br><em>Des espoirs réels.</em></h2>
+        <p class="sec-intro testi-disclaimer">⚠️ Ces témoignages sont fictifs et illustratifs. Les vrais témoignages de personnes consentantes seront ajoutés progressivement.</p>
+      </header>
+
+      <div class="testi-layout">
+        <article class="testi-hero fade-up">
+          <div class="testi-quote-mark">"</div>
+          <blockquote>
+            J'ai bu pendant douze ans. J'ai tout caché, tout nié — à ma femme, à mon médecin, à moi-même. Le déclic a été le jour où ma fille de sept ans m'a demandé pourquoi je sentais toujours comme ça. Ce soir-là, j'ai appelé le 3114 pour la première fois. Trois ans plus tard, je travaille comme pair-aidant bénévole.
+          </blockquote>
+          <footer class="testi-foot">
+            <div class="testi-avatar" style="--av:#38C4A0">M</div>
+            <div>
+              <strong>Marc, 44 ans — Paris</strong>
+              <span>3 ans de sobriété · Pair-aidant</span>
+            </div>
+            <a href="#contact" class="testi-btn">Lui écrire</a>
+          </footer>
+        </article>
+
+        <div class="testi-col">
+          <article class="testi-small fade-up" style="--fd:0.1s">
+            <div class="testi-avatar sm" style="--av:#D4A847">S</div>
+            <div class="testi-small-body">
+              <blockquote>"Les jeux ont pris le contrôle de ma vie sans que je le voie venir. La TCC m'a aidée à comprendre que je fuyais une dépression non traitée. Traiter la vraie cause a tout changé."</blockquote>
+              <footer class="testi-small-foot">
+                <strong>Sofia, 31 ans · Lyon</strong>
+                <span>2 ans sans jeux</span>
+                <a href="#contact" class="testi-link">Lui écrire →</a>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testi-small fade-up" style="--fd:0.2s">
+            <div class="testi-avatar sm" style="--av:#A07BE0">K</div>
+            <div class="testi-small-body">
+              <blockquote>"Héroïne pendant six ans. C'est le traitement de substitution + un groupe NA qui a marché. La honte était le vrai obstacle. Quand on la lâche, tout devient possible."</blockquote>
+              <footer class="testi-small-foot">
+                <strong>Karim, 38 ans · Marseille</strong>
+                <span>7 ans de rémission</span>
+                <a href="#contact" class="testi-link">Lui écrire →</a>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testi-small fade-up" style="--fd:0.3s">
+            <div class="testi-avatar sm" style="--av:#E07B8A">C</div>
+            <div class="testi-small-body">
+              <blockquote>"Ma fille était accro aux médicaments. Al-Anon m'a appris à l'aider sans la couvrir — et à prendre soin de moi aussi. Elle est en soin aujourd'hui. Et moi je tiens."</blockquote>
+              <footer class="testi-small-foot">
+                <strong>Christine, 58 ans · Bordeaux</strong>
+                <span>Proche aidante</span>
+                <a href="#contact" class="testi-link">Lui écrire →</a>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="share-cta fade-up">
+        <div class="share-cta-left">
+          <h3>Vous êtes en rémission ?</h3>
+          <p>Votre vécu est une force que personne ne peut acheter. Rejoignez notre réseau de pairs-aidants et aidez d'autres personnes à trouver leur chemin.</p>
+        </div>
+        <a href="#contact" class="cta-primary">Partager mon histoire</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       PROFESSIONNELS
+  ======================================================= -->
+  <section class="sec sec-tinted" id="pros">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow">Ressources</p>
+        <h2>Trouver de l'aide près de vous</h2>
+        <p class="sec-intro">Ces structures vous accueillent sans jugement, gratuitement ou à faible coût.</p>
+      </header>
+
+      <div class="pros-grid">
+        <a href="https://www.reseau-addictions.fr" target="_blank" rel="noopener noreferrer" class="pro-card fade-up">
+          <div class="pro-badge" style="--bc:#38C4A0">CSAPA</div>
+          <h3>Centres de Soins Ambulatoires</h3>
+          <p>Accompagnement médical, social et psychologique gratuit et anonyme pour toute addiction. Un par département.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+        <a href="https://www.alcooliques-anonymes.fr" target="_blank" rel="noopener noreferrer" class="pro-card fade-up" style="--fd:0.05s">
+          <div class="pro-badge" style="--bc:#D4A847">AA</div>
+          <h3>Alcooliques Anonymes</h3>
+          <p>Groupes de parole gratuits, des milliers de réunions par semaine en France, en présentiel et en ligne.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+        <a href="https://www.narcotiques-anonymes.fr" target="_blank" rel="noopener noreferrer" class="pro-card fade-up" style="--fd:0.1s">
+          <div class="pro-badge" style="--bc:#A07BE0">NA</div>
+          <h3>Narcotiques Anonymes</h3>
+          <p>Pour toutes addictions aux substances. Communauté internationale très active, réunions hybrides.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+        <a href="https://www.joueurs-anonymes.fr" target="_blank" rel="noopener noreferrer" class="pro-card fade-up" style="--fd:0.15s">
+          <div class="pro-badge" style="--bc:#E07B8A">JA</div>
+          <h3>Joueurs Anonymes</h3>
+          <p>Addictions aux jeux. Groupes gratuits en présentiel et en ligne, accessibles sans inscription.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+        <a href="https://www.addictions-france.org" target="_blank" rel="noopener noreferrer" class="pro-card fade-up" style="--fd:0.2s">
+          <div class="pro-badge" style="--bc:#38C4A0">AF</div>
+          <h3>Addictions France</h3>
+          <p>200+ établissements d'accompagnement. Consultations, hébergement thérapeutique, post-cure.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+        <a href="https://www.sfalcoologie.asso.fr" target="_blank" rel="noopener noreferrer" class="pro-card fade-up" style="--fd:0.25s">
+          <div class="pro-badge" style="--bc:#D4A847">SFA</div>
+          <h3>Annuaire addictologues</h3>
+          <p>Médecins spécialisés référencés partout en France. Pour un suivi médical personnalisé et remboursé.</p>
+          <span class="pro-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="first-steps fade-up">
+        <h3>Par où commencer ?</h3>
+        <div class="steps-row">
+          <div class="step-item">
+            <div class="step-n">1</div>
+            <strong>Appelez le 3114</strong>
+            <p>Ils vous orientent vers la bonne ressource près de chez vous, 24h/24.</p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">
+            <div class="step-n">2</div>
+            <strong>Votre médecin traitant</strong>
+            <p>Il prescrit et oriente vers un addictologue ou un CSAPA, sans jugement.</p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">
+            <div class="step-n">3</div>
+            <strong>Un CSAPA directement</strong>
+            <p>Sans ordonnance, souvent sans rendez-vous, gratuit et anonyme partout en France.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FAQ
+  ======================================================= -->
+  <section class="sec" id="faq">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Ce que vous vous demandez peut-être</h2>
+      </header>
+
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">Est-ce que je suis vraiment addict, ou est-ce que j'exagère ?</button>
+          <div class="faq-a">
+            <p>La question elle-même est un signe. Les personnes qui ne souffrent pas d'addiction ne se posent généralement pas cette question avec anxiété. L'auto-évaluation en haut de page peut vous donner un premier repère. Un professionnel de santé peut poser un diagnostic précis — sans jugement.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up" style="--fd:0.05s">
+          <button class="faq-q" aria-expanded="false">Vais-je être obligé·e de tout arrêter du jour au lendemain ?</button>
+          <div class="faq-a">
+            <p>Non. La réduction des risques est une approche médicalement reconnue. L'objectif est votre mieux-être, pas une performance d'abstinence. Le rythme de progression est défini avec vous, pas imposé.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up" style="--fd:0.1s">
+          <button class="faq-q" aria-expanded="false">Que faire si j'ai déjà rechute plusieurs fois ?</button>
+          <div class="faq-a">
+            <p>La rechute fait partie du processus de rémission pour la majorité des personnes — elle ne signifie pas l'échec. Elle signifie que le traitement ou l'environnement doit être ajusté. Chaque tentative apprend quelque chose d'utile.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up" style="--fd:0.15s">
+          <button class="faq-q" aria-expanded="false">Comment aider un proche sans le brusquer ?</button>
+          <div class="faq-a">
+            <p>Exprimez ce que vous observez et ressentez, sans accuser ("J'ai peur quand tu rentres dans cet état"). Évitez de couvrir les conséquences de la consommation. Proposez votre aide concrète sans condition. Et prenez soin de vous — Al-Anon est fait pour ça.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up" style="--fd:0.2s">
+          <button class="faq-q" aria-expanded="false">Est-ce que ça coûte cher de se faire soigner ?</button>
+          <div class="faq-a">
+            <p>Non. Les CSAPA sont gratuits et anonymes. Les groupes AA, NA et similaires sont entièrement gratuits. La médecine générale est remboursée. Certains traitements médicamenteux sont remboursés à 100%. Il existe des solutions pour toutes les situations financières.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up" style="--fd:0.25s">
+          <button class="faq-q" aria-expanded="false">Mon employeur, ma famille ou la justice seront-ils au courant ?</button>
+          <div class="faq-a">
+            <p>Non. Le secret médical s'applique à tous les professionnels de santé. Les CSAPA sont anonymes. Les groupes de parole fonctionnent sur l'anonymat total. Vous n'avez aucune obligation de déclarer votre démarche à qui que ce soit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       NUMÉROS D'URGENCE
+  ======================================================= -->
+  <section class="sec sec-dark" id="urgences">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow eyebrow-light">À garder sur vous</p>
+        <h2 class="h2-light">Numéros importants</h2>
+        <p class="sec-intro intro-light">Tous gratuits depuis un fixe ou un mobile. Enregistrez-les maintenant.</p>
+      </header>
+
+      <div class="urgences-grid">
+        <a href="tel:3114" class="urg-card urg-primary fade-up">
+          <div class="urg-top">
+            <div class="urg-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="urg-num">3114</div>
+          </div>
+          <div class="urg-info">
+            <strong>Prévention du Suicide</strong>
+            <span>24h/24 · Gratuit · Confidentiel</span>
+          </div>
+        </a>
+
+        <a href="tel:0800235236" class="urg-card fade-up" style="--fd:0.05s">
+          <div class="urg-top">
+            <div class="urg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+            <div class="urg-num small">0 800 23 52 36</div>
+          </div>
+          <div class="urg-info">
+            <strong>Drogues Info Service</strong>
+            <span>Lun–Sam · 8h–20h</span>
+          </div>
+        </a>
+
+        <a href="tel:0980980930" class="urg-card fade-up" style="--fd:0.1s">
+          <div class="urg-top">
+            <div class="urg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <div class="urg-num small">09 80 98 09 30</div>
+          </div>
+          <div class="urg-info">
+            <strong>Alcool Info Service</strong>
+            <span>7j/7 · 8h–2h</span>
+          </div>
+        </a>
+
+        <a href="tel:0974751313" class="urg-card fade-up" style="--fd:0.15s">
+          <div class="urg-top">
+            <div class="urg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="urg-num small">09 74 75 13 13</div>
+          </div>
+          <div class="urg-info">
+            <strong>Joueurs Info Service</strong>
+            <span>7j/7 · 8h–2h</span>
+          </div>
+        </a>
+
+        <a href="tel:3989" class="urg-card fade-up" style="--fd:0.2s">
+          <div class="urg-top">
+            <div class="urg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="urg-num">3989</div>
+          </div>
+          <div class="urg-info">
+            <strong>Tabac Info Service</strong>
+            <span>Lun–Sam · 8h–20h</span>
+          </div>
+        </a>
+
+        <a href="tel:15" class="urg-card urg-orange fade-up" style="--fd:0.25s">
+          <div class="urg-top">
+            <div class="urg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <div class="urg-num">15</div>
+          </div>
+          <div class="urg-info">
+            <strong>SAMU — Urgence médicale</strong>
+            <span>Surdose · Détresse physique</span>
+          </div>
+        </a>
+      </div>
+
+      <p class="urgences-tip fade-up">💡 Faites une capture d'écran de cette page et enregistrez-la dans vos favoris — ces numéros resteront accessibles même sans connexion.</p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CONTACT
+  ======================================================= -->
+  <section class="sec" id="contact">
+    <div class="container">
+      <header class="sec-head">
+        <p class="eyebrow">Parler</p>
+        <h2>Commencer la conversation</h2>
+        <p class="sec-intro">Un message suffit. Un pair-aidant vous répondra sous 24h, sans jugement et en toute confidentialité.</p>
+      </header>
+
+      <div class="contact-layout">
+        <div class="contact-form fade-up">
+          <div class="form-label-tag">Formulaire confidentiel</div>
+          <div class="fg">
+            <label for="fn">Prénom ou pseudo</label>
+            <input type="text" id="fn" placeholder="Comment vous appeler ?" autocomplete="off"/>
+          </div>
+          <div class="fg">
+            <label for="fe">Email <em class="opt">(facultatif)</em></label>
+            <input type="email" id="fe" placeholder="Pour vous répondre" autocomplete="off"/>
+          </div>
+          <div class="fg">
+            <label for="fs">Je suis…</label>
+            <select id="fs">
+              <option value="">Choisir</option>
+              <option>En difficulté avec une addiction</option>
+              <option>Proche d'une personne en difficulté</option>
+              <option>En rémission — je veux partager</option>
+              <option>Professionnel de santé</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="fm">Votre message</label>
+            <textarea id="fm" rows="5" placeholder="Racontez-nous ce qui vous amène, à votre rythme…"></textarea>
+          </div>
+          <button class="cta-primary full-btn" id="send-btn" type="button">Envoyer mon message</button>
+          <p class="form-privacy">🔒 Vos données ne sont jamais vendues ni partagées.</p>
+        </div>
+
+        <div class="contact-aside">
+          <div class="aside-card fade-up" style="--fd:0.1s">
+            <div class="aside-icon" style="color:#38C4A0">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4>Chat en direct</h4>
+              <p>Lun–Ven · 10h–22h. Conversation instantanée avec un pair-aidant formé.</p>
+              <a href="#" class="aside-link">Ouvrir le chat →</a>
+            </div>
+          </div>
+          <div class="aside-card fade-up" style="--fd:0.2s">
+            <div class="aside-icon" style="color:#D4A847">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Forum communautaire</h4>
+              <p>Espace d'entraide anonyme. Partagez votre quotidien, vos victoires, vos difficultés.</p>
+              <a href="#" class="aside-link">Rejoindre le forum →</a>
+            </div>
+          </div>
+          <div class="aside-card fade-up" style="--fd:0.3s">
+            <div class="aside-icon" style="color:#A07BE0">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Groupe WhatsApp</h4>
+              <p>Groupe privé modéré. Pour ne jamais traverser une nuit difficile seul·e.</p>
+              <a href="#" class="aside-link">Rejoindre →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo footer-logo">
+          <div class="logo-orb" aria-hidden="true"></div>
+          Reborn
+        </a>
+        <p>Un espace de prévention, d'écoute et d'espoir pour toutes les personnes touchées par l'addiction.</p>
+        <p class="f-disc">Ce site ne remplace pas un service médical. Danger immédiat : appelez le 15 ou le 112.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#comprendre">Comprendre l'addiction</a>
+        <a href="#methodes">Méthodes d'aide</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#pros">Professionnels</a>
+        <a href="#urgences">Numéros d'urgence</a>
+        <a href="#faq">Questions fréquentes</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources externes</h4>
+        <a href="https://www.drogues.gouv.fr" target="_blank" rel="noopener noreferrer">Drogues.gouv.fr</a>
+        <a href="https://www.alcooliques-anonymes.fr" target="_blank" rel="noopener noreferrer">Alcooliques Anonymes</a>
+        <a href="https://www.narcotiques-anonymes.fr" target="_blank" rel="noopener noreferrer">Narcotiques Anonymes</a>
+        <a href="https://www.addictions-france.org" target="_blank" rel="noopener noreferrer">Addictions France</a>
+        <a href="https://www.joueurs-anonymes.fr" target="_blank" rel="noopener noreferrer">Joueurs Anonymes</a>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar-inner">
+        <p>© 2025 Reborn. Fait avec soin pour ceux qui cherchent leur chemin.</p>
+        <div>
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Accessibilité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="resssource/main.js"></script>
+</body>
+</html>
