@@ -179,22 +179,128 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
-// ── Contact form ──────────────────────────────────────────────
+// ── Contact form — Formspree ──────────────────────────────────
 (function () {
-  const btn = document.getElementById('send-btn');
-  if (!btn) return;
+  // ✏️  Remplace cette URL par ton endpoint Formspree personnel
+  const FORMSPREE_URL = 'https://formspree.io/f/xojolwla';
 
-  btn.addEventListener('click', () => {
-    const msg = document.getElementById('fm');
-    if (!msg || !msg.value.trim()) {
-      msg.focus();
-      msg.style.borderColor = '#E07B8A';
-      setTimeout(() => { msg.style.borderColor = ''; }, 2500);
+  const btn      = document.getElementById('send-btn');
+  const fieldName = document.getElementById('fn');
+  const fieldEmail = document.getElementById('fe');
+  const fieldSubject = document.getElementById('fs');
+  const fieldMsg  = document.getElementById('fm');
+  const formWrap  = document.querySelector('.contact-form');
+
+  if (!btn || !fieldMsg) return;
+
+  // Affiche un message d'erreur sous un champ
+  function setError(field, msg) {
+    clearError(field);
+    field.style.borderColor = '#E07B8A';
+    const err = document.createElement('p');
+    err.className = 'form-error';
+    err.style.cssText = 'color:#E07B8A;font-size:.8rem;margin-top:4px';
+    err.textContent = msg;
+    field.parentNode.appendChild(err);
+  }
+
+  function clearError(field) {
+    field.style.borderColor = '';
+    const prev = field.parentNode.querySelector('.form-error');
+    if (prev) prev.remove();
+  }
+
+  // Validation légère côté client
+  function validate() {
+    let ok = true;
+    clearError(fieldMsg);
+    clearError(fieldName);
+
+    if (!fieldName.value.trim()) {
+      setError(fieldName, 'Merci d\'indiquer un prénom ou un pseudo.');
+      ok = false;
+    }
+    if (!fieldMsg.value.trim()) {
+      setError(fieldMsg, 'Le message ne peut pas être vide.');
+      ok = false;
+    }
+    return ok;
+  }
+
+  // État du bouton
+  function setLoading(on) {
+    btn.disabled = on;
+    btn.textContent = on ? 'Envoi en cours…' : 'Envoyer mon message';
+    btn.style.opacity = on ? '0.7' : '1';
+  }
+
+  function showSuccess() {
+    // Remplace le formulaire par un message de confirmation
+    formWrap.innerHTML = `
+      <div style="text-align:center;padding:48px 24px">
+        <div style="font-size:3rem;margin-bottom:16px">✅</div>
+        <h3 style="font-family:var(--ff-display);font-size:1.6rem;margin-bottom:10px">
+          Message bien reçu !
+        </h3>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.7;max-width:360px;margin:0 auto">
+          Un pair-aidant te répondra sous 24h à l'adresse indiquée.
+          En attendant, le <a href="tel:3114" style="color:var(--teal);font-weight:600">3114</a>
+          reste disponible 24h/24 si tu as besoin de parler maintenant.
+        </p>
+      </div>
+    `;
+  }
+
+  function showNetworkError() {
+    const existing = formWrap.querySelector('.form-global-error');
+    if (existing) existing.remove();
+    const el = document.createElement('p');
+    el.className = 'form-global-error';
+    el.style.cssText = 'background:#FFF0F0;border:1px solid #E07B8A;color:#C0394A;border-radius:8px;padding:12px 16px;font-size:.88rem;margin-bottom:16px';
+    el.textContent = 'Une erreur est survenue. Vérifie ta connexion et réessaie, ou appelle directement le 3114.';
+    btn.insertAdjacentElement('beforebegin', el);
+  }
+
+  btn.addEventListener('click', async () => {
+    if (!validate()) return;
+
+    // Alerte si l'URL n'a pas été remplacée
+    if (FORMSPREE_URL.includes('XXXXXXXX')) {
+      alert('⚠️ Remplace FORMSPREE_URL dans main.js par ton vrai endpoint Formspree.');
       return;
     }
-    btn.textContent = '✓ Message envoyé — réponse sous 24h';
-    btn.style.background = 'var(--teal-dk)';
-    btn.disabled = true;
-    msg.value = '';
+
+    setLoading(true);
+
+    const payload = {
+      prenom:  fieldName.value.trim(),
+      email:   fieldEmail.value.trim(),
+      sujet:   fieldSubject.value,
+      message: fieldMsg.value.trim(),
+      _subject: `[Reborn] Nouveau message de ${fieldName.value.trim()}`,
+      // Honeypot anti-spam (Formspree ignore ce champ si rempli par un bot)
+      _gotcha: '',
+    };
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        showSuccess();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        console.error('Formspree error:', data);
+        setLoading(false);
+        showNetworkError();
+      }
+    } catch (err) {
+      console.error('Network error:', err);
+      setLoading(false);
+      showNetworkError();
+    }
   });
 })();
